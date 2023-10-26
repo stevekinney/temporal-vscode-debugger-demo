@@ -2,11 +2,15 @@
   "extends": "@tsconfig/node18/tsconfig.json",
   "version": "4.4.2",
   "compilerOptions": {
+    "module": "es2022",
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "rootDir": "./src",
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "strict": true
   },
   "include": ["src/**/*.ts"]
 }

@@ -7,10 +7,11 @@ const { notifyHumanForVerification, collectFeedback } = proxyActivities<typeof a
   startToCloseTimeout: '1 minute',
 });
 
-export async function humanVerificationWorkflow(task: string) {
+export async function humanVerificationWorkflow(verificationId: string) {
   let verified = false;
 
-  await notifyHumanForVerification(task);
+  await notifyHumanForVerification(verificationId);
+
   setHandler(verifySignal, () => {
     verified = true;
   });

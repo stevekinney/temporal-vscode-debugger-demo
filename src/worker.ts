@@ -1,17 +1,16 @@
+import { createRequire } from 'module';
+
 import { Worker } from '@temporalio/worker';
-import * as activities from './activities';
 
-async function run() {
-  const worker = await Worker.create({
-    workflowsPath: require.resolve('./workflows'),
-    activities,
-    taskQueue: 'replay-demo',
-  });
+import * as activities from './activities.js';
 
-  await worker.run();
-}
+const require = createRequire(import.meta.url);
+const workflowsPath = require.resolve('./workflows');
 
-run().catch((err) => {
-  console.error(err);
-  process.exit(1);
+const worker = await Worker.create({
+  workflowsPath,
+  activities,
+  taskQueue: 'debugger-demo',
 });
+
+await worker.run();
