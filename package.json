@@ -25,8 +25,7 @@
     "@temporalio/client": "^1.8.6",
     "@temporalio/proto": "^1.8.6",
     "@temporalio/worker": "^1.8.6",
-    "@temporalio/workflow": "^1.8.6",
-    "waait": "^1.0.5"
+    "@temporalio/workflow": "^1.8.6"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
@@ -40,7 +39,6 @@
     "esno": "^0.17.0",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3",
-    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
 }
